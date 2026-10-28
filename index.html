@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Extreme Driving School</title>
+  <meta name="description" content="Informational website for an extreme driving school: safety programs, vehicle fleet and online registration for track sessions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <!-- 1. HEADER / NAV: flex row on desktop, burger menu (CSS-only checkbox) on phones -->
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="Extreme Drive, back to top">Extreme <span>Drive</span></a>
+
+    <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open menu">
+    <label class="burger" for="nav-toggle" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#fleet">Fleet</a></li>
+        <li><a href="#instructors">Instructors</a></li>
+      </ul>
+    </nav>
+
+    <p class="header-cta">
+      <a class="phone" href="tel:+77271234567">+7 (727) 123-45-67</a>
+      <a class="btn" href="#signup">Sign Up for the Race Track</a>
+    </p>
+  </header>
+
+  <main>
+    <!-- 2. HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">High-performance driving school</p>
+      <h1 id="hero-title">Learn to Fully Control the Car in Any Conditions</h1>
+      <p class="hero__lead">Closed-track programs with certified instructors: skid control, winter drift and sports track driving.</p>
+      <a class="btn btn--lg" href="#programs">Choose a Course</a>
+    </section>
+
+    <!-- 3. GRID SECTION: 3 columns on desktop, 1 column on phones -->
+    <section class="programs" id="programs" aria-labelledby="programs-title">
+      <header class="section-head">
+        <p class="eyebrow">Training programs</p>
+        <h2 id="programs-title">Choose your track</h2>
+        <p>Every program is practical driving on a closed track. Hours below are behind the wheel.</p>
+      </header>
+
+      <div class="cards">
+        <article class="card">
+          <p class="level">Beginner</p>
+          <h3>Defensive Driving Basics</h3>
+          <p>Emergency braking, skid control and hazard anticipation on a closed track.</p>
+          <p class="hours"><strong>12</strong> hours of practical driving</p>
+        </article>
+
+        <article class="card">
+          <p class="level">Intermediate</p>
+          <h3>Winter Drift</h3>
+          <p>Controlled slides on ice and snow: throttle, weight transfer and countersteer.</p>
+          <p class="hours"><strong>16</strong> hours of practical driving</p>
+        </article>
+
+        <article class="card">
+          <p class="level">Advanced</p>
+          <h3>Sports Track</h3>
+          <p>Racing line, braking points and lap-time work in a high-performance car.</p>
+          <p class="hours"><strong>20</strong> hours of practical driving</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. FEEDBACK FORM: validation with HTML attributes + CSS (:valid / :invalid) -->
+    <section class="signup" id="signup" aria-labelledby="signup-title">
+      <header class="signup__intro">
+        <p class="eyebrow">Online registration</p>
+        <h2 id="signup-title">Sign Up for the Race Track</h2>
+        <p>Leave your details and we will confirm your track session within one business day.</p>
+        <p class="signup__contacts">
+          <a href="tel:+77271234567">+7 (727) 123-45-67</a>
+          <a href="mailto:info@extremedrive.kz">info@extremedrive.kz</a>
+        </p>
+      </header>
+
+      <form class="form" action="#" method="post">
+        <p class="field">
+          <label for="full-name">Driver’s Full Name</label>
+          <input id="full-name" name="full-name" type="text" placeholder="Full name" autocomplete="name" minlength="2" required>
+          <span class="hint">Enter your first and last name.</span>
+        </p>
+
+        <p class="field">
+          <label for="experience">Driving Experience (in years)</label>
+          <input id="experience" name="experience" type="number" placeholder="e.g. 3" min="0" max="60" step="1" inputmode="numeric" required>
+          <span class="hint">Enter a whole number from 0 to 60.</span>
+        </p>
+
+        <p class="field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" pattern="\+?[0-9 \(\)\-]{10,20}" title="Use digits, spaces, brackets and dashes, for example +7 (727) 123-45-67" required>
+          <span class="hint">Use a phone like +7 (727) 123-45-67.</span>
+        </p>
+
+        <p class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required>
+          <span class="hint">Enter a valid email address.</span>
+        </p>
+
+        <fieldset class="vehicle">
+          <legend>Vehicle</legend>
+          <input type="radio" id="car-own" name="vehicle" value="own" checked required>
+          <label for="car-own">Own Car</label>
+          <input type="radio" id="car-school" name="vehicle" value="school">
+          <label for="car-school">School Car</label>
+        </fieldset>
+
+        <button class="btn btn--lg" type="submit">Send Application</button>
+        <p class="form__note">All fields are required.</p>
+      </form>
+    </section>
+  </main>
+
+  <!-- 5. FOOTER: dark carbon-fiber by default, theme selector inverts the palette (CSS only) -->
+  <footer class="site-footer">
+    <section class="footer-brand" aria-labelledby="brand-title">
+      <h2 id="brand-title" class="sr-only">Extreme Driving School</h2>
+      <a class="logo" href="#top" aria-label="Extreme Drive, back to top">Extreme <span>Drive</span></a>
+      <p>High-performance driving school. Safety programs, sports fleet and track sessions.</p>
+      <address>
+        <a href="tel:+77271234567">+7 (727) 123-45-67</a>
+        <a href="mailto:info@extremedrive.kz">info@extremedrive.kz</a>
+      </address>
+    </section>
+
+    <nav class="footer-links" aria-labelledby="safety-title">
+      <h2 id="safety-title">Safety regulations</h2>
+      <ul>
+        <li><a href="#signup">Helmet and gear rules</a></li>
+        <li><a href="#signup">Track briefing</a></li>
+        <li><a href="#signup">Emergency procedures</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-links" aria-labelledby="fed-title">
+      <h2 id="fed-title">Motorsport federations</h2>
+      <ul>
+        <li><a href="https://www.fia.com" target="_blank" rel="noopener">FIA</a></li>
+        <li><a href="https://www.fia.com/members/region/asia-6/country/KZ" target="_blank" rel="noopener">AFRK — Automotorsport Federation of Kazakhstan</a></li>
+        <li><a href="https://www.fia.com/members/region/asia-6/country/KZ" target="_blank" rel="noopener">Off Road Kazakhstan</a></li>
+      </ul>
+    </nav>
+
+    <fieldset class="theme">
+      <legend>Theme</legend>
+      <span class="toggle">
+        <input type="radio" name="theme" id="theme-dark" checked>
+        <label for="theme-dark">Dark</label>
+        <input type="radio" name="theme" id="theme-light">
+        <label for="theme-light">Light</label>
+      </span>
+    </fieldset>
+
+    <section class="legal" aria-labelledby="legal-title">
+      <h2 id="legal-title" class="sr-only">Legal information</h2>
+      <p>© 2026 Extreme Driving School. All rights reserved.</p>
+      <p>Track sessions are held at the participant’s own risk. A helmet is mandatory.</p>
+    </section>
+  </footer>
+
+</body>
+</html>
